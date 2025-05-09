@@ -3,6 +3,7 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 import vertex from "./shaders/vertex.glsl";
 import fragment from "./shaders/fragment.glsl";
 
+// scene
 const scene = new THREE.Scene();
 const canvas = document.querySelector("canvas");
 const camera = new THREE.PerspectiveCamera(
@@ -11,6 +12,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
+// camera
 camera.position.z = 10;
 const light = new THREE.AmbientLight("white", 1);
 scene.add(light);
@@ -24,7 +26,6 @@ const material = new THREE.ShaderMaterial({
   },
 });
 
-console.log(material);
 const planeMesh = new THREE.Mesh(geometry, material);
 
 scene.add(planeMesh);
